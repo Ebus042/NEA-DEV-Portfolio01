@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media print {
+  /* Hide things that shouldn’t be printed */
+  /* header,
+  nav,
+  footer,
+  button,
+  .no-print {
+    display: none !important;
+  } */
+
+  /* Make text readable */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  /* Ensure sections don’t break weirdly */
+  section,
+  div {
+    page-break-inside: avoid;
+  }
+
+  /* Make links visible in print */
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+  }
+
+  /* Ensure images resize well */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
